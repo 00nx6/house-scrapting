@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "house-scrapting"
+version = "0.1.0"
+description = ""
+authors = ["00nx6 <lszabo958@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.31.0"
+postgresqlite = "^0.4.3"
+pgcli = "^4.0.1"
+selenium = "^4.19.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

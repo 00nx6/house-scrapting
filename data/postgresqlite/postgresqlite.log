@@ -1,0 +1,392 @@
+The files belonging to this database system will be owned by user "lajos".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: nl_NL.UTF-8
+  NUMERIC:  nl_NL.UTF-8
+  TIME:     nl_NL.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/pgdata ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Europe/Amsterdam
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the option -A, or
+--auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /home/lajos/.cache/postgresqlite/14.3/bin/pg_ctl -D /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/pgdata -l logfile start
+
+PostgreSQL daemon is starting..
+2024-03-30 11:13:57.730 CET [36925] LOG:  starting PostgreSQL 14.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 12.1.0, 64-bit
+2024-03-30 11:13:57.733 CET [36925] LOG:  listening on IPv6 address "::1", port 43329
+2024-03-30 11:13:57.733 CET [36925] LOG:  listening on IPv4 address "127.0.0.1", port 43329
+2024-03-30 11:13:57.737 CET [36925] LOG:  listening on Unix socket "/tmp/postgresqlite-maaBfOaL/.s.PGSQL.43329"
+2024-03-30 11:13:57.748 CET [36927] LOG:  database system was shut down at 2024-03-30 11:13:57 CET
+2024-03-30 11:13:57.756 CET [36925] LOG:  database system is ready to accept connections
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/JSEPcjsxNDfb as it was no longer locked
+PostgreSQLite now has 0 client(s)
+PostgreSQLite now has 1 client(s)
+2024-03-30 11:14:26.150 CET [36996] ERROR:  relation "quotes" does not exist at character 15
+2024-03-30 11:14:26.150 CET [36996] STATEMENT:  select * from quotes
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/adeotPONbfjX as it was no longer locked
+PostgreSQLite now has 0 client(s)
+2024-03-30 11:17:07.742 CET [37096] ERROR:  syntax error at or near "{" at character 21
+2024-03-30 11:17:07.742 CET [37096] STATEMENT:  CREATE TABLE filter {
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	}
+	CREATE TABLE website {
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id REFERENCES filter(id)
+	}
+	CREATE TABLE saved_houses {
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	}
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/MJUmIUqGEBhJ as it was no longer locked
+2024-03-30 11:17:30.158 CET [37112] ERROR:  syntax error at or near "CREATE" at character 77
+2024-03-30 11:17:30.158 CET [37112] STATEMENT:  CREATE TABLE filter (
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	)
+	CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id REFERENCES filter(id)
+	)
+	CREATE TABLE saved_houses (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/kQSdWohNNAhC as it was no longer locked
+2024-03-30 11:17:49.330 CET [37137] ERROR:  syntax error at or near "REFERENCES" at character 88
+2024-03-30 11:17:49.330 CET [37137] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id REFERENCES filter(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/NhWtXiCNEToc as it was no longer locked
+2024-03-30 11:18:03.665 CET [37153] ERROR:  relation "filter" already exists
+2024-03-30 11:18:03.665 CET [37153] STATEMENT:  CREATE TABLE filter (
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	);
+2024-03-30 11:18:03.665 CET [37153] ERROR:  syntax error at or near "FOREIGN" at character 88
+2024-03-30 11:18:03.665 CET [37153] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id FOREIGN KEY REFERENCES filter(id)
+	);
+2024-03-30 11:18:03.666 CET [37153] ERROR:  relation "saved_houses" already exists
+2024-03-30 11:18:03.666 CET [37153] STATEMENT:  CREATE TABLE saved_houses (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ibiOtVJzCmQT as it was no longer locked
+2024-03-30 11:18:25.728 CET [37173] ERROR:  relation "filter" already exists
+2024-03-30 11:18:25.728 CET [37173] STATEMENT:  CREATE TABLE filter (
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	);
+2024-03-30 11:18:25.729 CET [37173] ERROR:  syntax error at or near "FOREIGN" at character 101
+2024-03-30 11:18:25.729 CET [37173] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filter(id)
+	);
+2024-03-30 11:18:25.729 CET [37173] ERROR:  relation "saved_houses" already exists
+2024-03-30 11:18:25.729 CET [37173] STATEMENT:  CREATE TABLE saved_houses (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/TFEyZqwouBzG as it was no longer locked
+2024-03-30 11:18:44.374 CET [37211] ERROR:  syntax error at or near "CREATE" at character 18
+2024-03-30 11:18:44.374 CET [37211] STATEMENT:  DROP TABLE SCEMA
+	CREATE TABLE filter (
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	);
+2024-03-30 11:18:44.374 CET [37211] ERROR:  syntax error at or near "FOREIGN" at character 101
+2024-03-30 11:18:44.374 CET [37211] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filter(id)
+	);
+2024-03-30 11:18:44.376 CET [37211] ERROR:  relation "saved_houses" already exists
+2024-03-30 11:18:44.376 CET [37211] STATEMENT:  CREATE TABLE saved_houses (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/zfCenXjxWdDE as it was no longer locked
+2024-03-30 11:19:23.295 CET [37250] ERROR:  syntax error at or near "CSCADE" at character 20
+2024-03-30 11:19:23.295 CET [37250] STATEMENT:  DROP SCHEMA public CSCADE;
+2024-03-30 11:19:23.295 CET [37250] ERROR:  schema "public" already exists
+2024-03-30 11:19:23.295 CET [37250] STATEMENT:  CREATE SCHEMA public;
+2024-03-30 11:19:23.297 CET [37250] ERROR:  relation "filter" already exists
+2024-03-30 11:19:23.297 CET [37250] STATEMENT:  CREATE TABLE filter (
+	    id SERIAL PRIMARY KEY,
+	    filter TEXT NOT NUll
+	);
+2024-03-30 11:19:23.298 CET [37250] ERROR:  syntax error at or near "FOREIGN" at character 101
+2024-03-30 11:19:23.298 CET [37250] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filter(id)
+	);
+2024-03-30 11:19:23.298 CET [37250] ERROR:  relation "saved_houses" already exists
+2024-03-30 11:19:23.298 CET [37250] STATEMENT:  CREATE TABLE saved_houses (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    is_contacted boolean
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/tFwFaCRUNBkJ as it was no longer locked
+2024-03-30 11:19:35.799 CET [37268] ERROR:  syntax error at or near "FOREIGN" at character 101
+2024-03-30 11:19:35.799 CET [37268] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    url TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filter(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/lmWUJRrblCqZ as it was no longer locked
+2024-03-30 11:19:57.729 CET [37283] ERROR:  syntax error at or near "FOREIGN" at character 103
+2024-03-30 11:19:57.729 CET [37283] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    "url" TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filter(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/VLlftEclrNKr as it was no longer locked
+PostgreSQLite shutting down idle server...
+2024-03-30 11:20:02.797 CET [36925] LOG:  received smart shutdown request
+2024-03-30 11:20:02.805 CET [36925] LOG:  background worker "logical replication launcher" (PID 36933) exited with exit code 1
+2024-03-30 11:20:02.806 CET [36928] LOG:  shutting down
+2024-03-30 11:20:02.857 CET [36925] LOG:  database system is shut down
+PostgreSQLite shutdown successful
+PostgreSQL daemon is starting..
+2024-03-30 11:20:26.492 CET [37307] LOG:  starting PostgreSQL 14.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 12.1.0, 64-bit
+2024-03-30 11:20:26.492 CET [37307] LOG:  listening on IPv6 address "::1", port 43329
+2024-03-30 11:20:26.492 CET [37307] LOG:  listening on IPv4 address "127.0.0.1", port 43329
+2024-03-30 11:20:26.497 CET [37307] LOG:  listening on Unix socket "/tmp/postgresqlite-maaBfOaL/.s.PGSQL.43329"
+2024-03-30 11:20:26.507 CET [37309] LOG:  database system was shut down at 2024-03-30 11:20:02 CET
+2024-03-30 11:20:26.517 CET [37307] LOG:  database system is ready to accept connections
+PostgreSQLite now has 1 client(s)
+2024-03-30 11:20:26.981 CET [37318] ERROR:  syntax error at or near "FOREIGN" at character 103
+2024-03-30 11:20:26.981 CET [37318] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    "url" TEXT NOT NULL,
+	    filter_id INT NOT NULL FOREIGN KEY REFERENCES filters(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/nCMkdADqmVAM as it was no longer locked
+PostgreSQLite now has 0 client(s)
+2024-03-30 11:20:43.488 CET [37339] ERROR:  syntax error at or near "FOREIGN" at character 107
+2024-03-30 11:20:43.488 CET [37339] STATEMENT:  CREATE TABLE website (
+	    id SERIAL PRIMARY KEY,
+	    "url" TEXT NOT NULL,
+	    filter_id INTEGER NOT NULL FOREIGN KEY REFERENCES filters(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/BkGwdshExUuD as it was no longer locked
+2024-03-30 11:21:14.244 CET [37354] ERROR:  syntax error at or near "FOREIGN" at character 116
+2024-03-30 11:21:14.244 CET [37354] STATEMENT:  CREATE TABLE website (
+	    id SERIAL NOT NULL PRIMARY KEY,
+	    "url" TEXT NOT NULL,
+	    filter_id INTEGER NOT NULL FOREIGN KEY REFERENCES filters(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ArcAITLvdtZw as it was no longer locked
+2024-03-30 11:21:23.867 CET [37372] ERROR:  syntax error at or near "FOREIGN" at character 107
+2024-03-30 11:21:23.867 CET [37372] STATEMENT:  CREATE TABLE website (
+	    id SERIAL NOT NULL PRIMARY KEY,
+	    "url" TEXT NOT NULL,
+	    filter_id INTEGER FOREIGN KEY REFERENCES filters(id)
+	);
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/vvahvhtdilvr as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/BYwghHEFHXIl as it was no longer locked
+PostgreSQLite now has 1 client(s)
+2024-03-30 11:22:36.645 CET [37414] ERROR:  syntax error at or near "exit" at character 1
+2024-03-30 11:22:36.645 CET [37414] STATEMENT:  exit()
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/xQowRnWgozLx as it was no longer locked
+PostgreSQLite now has 0 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/BzYotRaeXKUK as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/IlawBgTCBSMv as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/qslvHFBtQyWF as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/lDAhrnwuXXnM as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/uxfmVQfHUeKq as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PXzYNCrUxUQF as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/eExgkUeDgjjq as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/KiEsqCqaWlQs as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/MaaWrrwHvguH as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ZdzWRxjxkSdA as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ynJOKstMdAvR as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ObnqVgHvEcXp as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/xPnZfSjKWanT as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/HgUcbSrRQNja as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/YpxxDKSKoqvS as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/mdcuArrXYJaG as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/hwGLsznqLcBY as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/FxTFDskuwaIS as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/kVSPDvFOlWej as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/uDKTzVNMjmNM as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/yLpiBJdCHQoy as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/QixQBSqUvcvC as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/VGKIqlbdaDTe as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/lWWQLFkfKVxz as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/WWQJMovyXlBM as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/dcnbfsGIRhuN as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/vIoyRksqpKhn as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/fbLuoKMVWRgc as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/lzVkVuvGUKKI as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/CXnBkMSVXDBd as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/LScfHEHjYDvr as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/jtjFMZxKYcGk as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/siybjPmwkjMR as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/axZNnpYcdGfQ as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/MGGZlfNthGxr as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/HHXtzZWbgaIh as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/bhAPbsUCrkUK as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/tGIMWbOCHtfV as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/hUSytARIIDWK as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/BiIozvotzGZs as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/wpeerboKgJxW as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/xQrgSMDJLkKN as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ZmZSHGOfuASq as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ZWOZJiITjTdE as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/dlbhkjsaGCTy as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PtzLlEOyNwSJ as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PoSPSXwvkwFl as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/MCfvCSopfDvL as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/AobnmcRVPuQU as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/LADiKfmrSFmL as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/fNYOilJqzwfI as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/mlaDGPMzUrnE as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ZshzwLLdgnFd as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/srLfoDtZxwEZ as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/szUzLBNNSPsr as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/awhTkFeKdcnj as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/UMwyHJliYMwo as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/GYWrZsPRJJbO as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/KoEFOaKvxPJm as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/sOXvMkzKbfRy as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/tbVdMxCmCKMU as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/FsfCLfhoTwkP as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/asccqhsnxAaG as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/AMdkmBkuavNK as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/bWMDDzLVbQGZ as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/lLPlOdckXGPY as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/CgquHOAcQSwr as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/IicSWmQtQCtI as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PfXvmIvaimKj as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/jkRmDNdYAHuH as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/OpdpBJSKemTV as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/YmnKqRiRoXZb as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PBPtjgXIHKvm as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/LKegEQjfRWmy as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/oPlIsNVwoqhN as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/uTqWgZjGjIwU as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/QFnuchtBpNpT as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/QQlNhkWevlGp as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/xCARRJpYxQKr as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/DTGNDxUfYDhr as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/dZXDSzXTvuXl as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/HHkZFIwYEYBC as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/PuirQUatunhA as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/wJbNYaTkMjMZ as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/XNVPwAcBXSOG as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/GqpuNUrFaStq as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/EEnstaAaoIBM as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/IkICIDwuwsxk as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/KvOazgCcnOYN as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/KsCivRCDlkWU as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/OPMLKTWAVkfK as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/vzbFDFadWYUg as it was no longer locked
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/fEMLDHHxiWAg as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/NJcUjLcXIgME as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/FQGjExgXDaCq as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/QMddDslTyKYM as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/kVYOLqsenPJV as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/pYGYearFTvQt as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/CgYotJlHeDFE as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/gnMFrpTKhydc as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/RiTWMxmgdOGF as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/ajrqPAQjtCbS as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/plBKvCZFBhAA as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/iZxkmmQYYLxQ as it was no longer locked
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/NhcePESKtoTU as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/BzNYJtujWxUn as it was no longer locked
+PostgreSQLite now has 1 client(s)
+PostgreSQLite now has 2 client(s)
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/NCLTURkFOVXI as it was no longer locked
+PostgreSQLite now has 1 client(s)
+2024-03-30 15:21:19.511 CET [37464] ERROR:  syntax error at or near "exit" at character 1
+2024-03-30 15:21:19.511 CET [37464] STATEMENT:  exit()
+PostgreSQLite removed /home/lajos/Documents/projects/house-scrapting/data/postgresqlite/locks/tCWiiwfEKrGO as it was no longer locked
+PostgreSQLite now has 0 client(s)
+PostgreSQLite shutting down idle server...
+2024-03-30 15:24:22.397 CET [37307] LOG:  received smart shutdown request
+2024-03-30 15:24:22.403 CET [37307] LOG:  background worker "logical replication launcher" (PID 37315) exited with exit code 1
+2024-03-30 15:24:22.405 CET [37310] LOG:  shutting down
+2024-03-30 15:24:22.436 CET [37307] LOG:  database system is shut down
+PostgreSQLite shutdown successful
